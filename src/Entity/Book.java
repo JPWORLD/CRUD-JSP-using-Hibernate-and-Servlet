@@ -1,6 +1,5 @@
 package Entity;
 
-import java.util.Date;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,7 +11,7 @@ public class Book {
 	private String name;
 	private String state;
 	private String author;
-	private Date pub_date;
+	private String pub_date;
 	private int pages;
 	public int getId() {
 		return id;
@@ -38,10 +37,10 @@ public class Book {
 	public void setAuthor(String author) {
 		this.author = author;
 	}
-	public Date getPub_date() {
+	public String getPub_date() {
 		return pub_date;
 	}
-	public void setPub_date(Date pub_date) {
+	public void setPub_date(String pub_date) {
 		this.pub_date = pub_date;
 	}
 	public int getPages() {

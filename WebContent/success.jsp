@@ -29,12 +29,12 @@ Hello <jsp:getProperty property="userName" name="user"/>
  --%>
 <hr>
 <form action="Behave" method="post">
-	<input type="radio" name="action" value = "Add"/>Add 
-	<input type="radio" name="action" value= "Retrieve"/>Retrieve
-	<input type="radio" name="action" value = "Edit"/>Edit
-	<input type="radio" name="action" value = "Delete"/>Delete
-	<input type="submit" />
+	<input type="radio" name="choice" value = "Add"/>Add 
+	<input type="radio" name="choice" value= "Retrieve"/>Retrieve
+	<input type="radio" name="choice" value = "Edit"/>Edit
+	<input type="radio" name="choice" value = "Delete"/>Delete
+	<input type="submit" name = "submit" value = "Submit" />
 </form>
-</hr>
+
 </body>
 </html>

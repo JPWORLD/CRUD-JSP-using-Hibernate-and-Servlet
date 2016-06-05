@@ -12,10 +12,13 @@ Please input the information of the book you want to add:
 <form action="addBook" method="post">
 
 
-	<br><input type="text" name="Name" />
-	<br><input type="text" name="Author" />
-	<br><input type="text" name="State" />
-	<br><input type="text" name="Pub_Date" />
+	<br>Name: <input type="text" name="Name" />
+	<br>Author: <input type="text" name="Author" />
+	<br>Pages: <input type="text" name="Pages" />
+	<br>State: 
+	<input type="radio" name="State" value="UnBooked">Unbooked</input>
+	<input type="radio" name="State" value="Booked">Booked</input>
+	<br>Pub_Date<input type="text" name="Pub_Date" pattern="MM-dd-yyyy" />
 	<input type="submit" />
 
 </form>
@@ -24,3 +27,5 @@ Please input the information of the book you want to add:
 
 </body>
 </html>
+
+

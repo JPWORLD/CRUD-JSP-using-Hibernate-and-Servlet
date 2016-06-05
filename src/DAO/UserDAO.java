@@ -8,13 +8,12 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import Entity.Employee;
 import Util.HibernateUtil;
 
 public class UserDAO {
 	
 
-	public void saveEmployee(String name, String city, int sal, int phone) {
+	/*public void saveEmployee(String name, String city, int sal, int phone) {
 		Session session = HibernateUtil.getCurrentSession();
 		Transaction transaction = null;
 
@@ -119,5 +118,5 @@ public class UserDAO {
 			HibernateUtil.closeSession(session);
 
 		}
-	}
+	}*/
 }

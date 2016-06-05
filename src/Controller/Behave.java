@@ -10,8 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import Entity.User;
-
 /**
  * Servlet implementation class Behave
  */
@@ -19,44 +17,46 @@ import Entity.User;
 public class Behave extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
+/*	*//**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+	 *//*
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
-
+*/
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
-		String action = request.getParameter("action");
-		out.println("We know your action is " + action);
-
+		String action = request.getParameter("choice");
 		
-		if(action == "Add"){
+		if(action.equals("Add")){
 			RequestDispatcher dispatcher = request.getRequestDispatcher("addBook.jsp");
 			dispatcher.forward(request, response);
 			return;
 		}
-		if (action == "Delete"){
+		if (action.equals("Delete")){
 			RequestDispatcher dispatcher = request.getRequestDispatcher("deleteBook.jsp");
 			dispatcher.forward(request, response);
 			return;
 		}
-		if(action == "Edit"){
+		if(action.equals("Edit")){
 			RequestDispatcher dispatcher = request.getRequestDispatcher("editBook.jsp");
 			dispatcher.forward(request, response);
 			return;
 		}
-		if(action == "Retrieve"){
+		if(action.equals("Retrieve")){
 			RequestDispatcher dispatcher = request.getRequestDispatcher("retrieveBook.jsp");
 			dispatcher.forward(request, response);
 			return;
 		}
+		out.println("We know your action is " + action);
+
+		
+		
 		
 	
 	}
