@@ -46,6 +46,7 @@ public class Operation {
 				System.out.println("There is no such a book!");
 			}else{
 				session.delete(book);
+				transaction.commit();
 				System.out.println("Book records deleted!");
 			}
 			
@@ -80,6 +81,7 @@ public class Operation {
 				book.setPub_date(book_pub_date);
 				book.setState(book_state);
 				session.update(book);
+				transaction.commit();
 				System.out.println("Book records updated!");
 			}
 			
@@ -109,6 +111,7 @@ public class Operation {
 			if(book == null){
 				System.out.println("There is no such a book!");
 			}else{
+				transaction.commit();
 				System.out.println("This book is found! " + "And the information of the book is listed below: ");
 				System.out.println("The author of the book is " + book.getAuthor());
 				System.out.println("The name of the book is " + book.getName());
@@ -118,7 +121,7 @@ public class Operation {
 			}
 			
 			
-			transaction.commit();
+
 
 		} catch (HibernateException e) {
 
