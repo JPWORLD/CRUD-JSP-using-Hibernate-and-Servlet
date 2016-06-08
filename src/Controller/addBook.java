@@ -1,9 +1,7 @@
 package Controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.Iterator;
-import java.util.List;
+
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,12 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.hibernate.HibernateException;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
 
-import Entity.Book;
-import Util.HibernateUtil;
+
+
+import Util.Operation;
 
 /**
  * Servlet implementation class addBook
@@ -44,81 +40,10 @@ public class addBook extends HttpServlet {
 		System.out.println("The book has " + book_pages + " pages");
 		System.out.println("The book is " + book_state);
 		
-		Session session = HibernateUtil.getCurrentSession();
-		Transaction transaction = null;
-
-		try {
-			transaction = session.beginTransaction();
-			//transaction.begin();
-			Book newbook = new Book();
-			newbook.setAuthor(book_author);
-			newbook.setName(book_name);
-			newbook.setPub_date(book_pub_date);
-			newbook.setState(book_state);
-			newbook.setPages(book_pages);
-			session.save(newbook);
-			transaction.commit();
-			System.out.println("New book inserted sucessessfully");
-		} catch (HibernateException e) {
-			transaction.rollback();
-			e.printStackTrace();
-		} finally {
-			HibernateUtil.closeSession(session);
-		}
-		
-		/*Session session = HibernateUtil.getCurrentSession();
-		Transaction transaction = null;
-		boolean flag = false;
-		try {
-			transaction = session.beginTransaction();
-			List book = session.createQuery("from Book").list();
-
-			for (Iterator iterator = book.iterator(); iterator.hasNext();) {
-				Book book1 = (Book) iterator.next();
-				if(book1.getName() == request.getParameter("Name")){
-					flag = true;
-					System.out.println("This book is new!");
-				}
-			}
-			transaction.commit();
-
-		} catch (HibernateException e) {
-
-			transaction.rollback();
-
-			e.printStackTrace();
-
-		} finally {
-
-			HibernateUtil.closeSession(session);
-
-		}*/
+		Operation operation = new Operation();
+		operation.add(book_author, book_pub_date, book_name, book_pages, book_state);
 		
 		
-		
-		/*if(flag){
-			session = HibernateUtil.getCurrentSession();
-			transaction = null;
-
-			try {
-				transaction = session.beginTransaction();
-				//transaction.begin();
-				Book newbook = new Book();
-				newbook.setAuthor(book_author);
-				newbook.setName(book_name);
-				newbook.setPub_date(book_pub_date);
-				newbook.setState(book_state);
-				newbook.setPages(book_pages);
-				session.save(newbook);
-				transaction.commit();
-				System.out.println("New book inserted sucessessfully");
-			} catch (HibernateException e) {
-				transaction.rollback();
-				e.printStackTrace();
-			} finally {
-				HibernateUtil.closeSession(session);
-			}
-		}*/
 		/*String location = request.getParameter("location");
 		String[] s = request.getParameterValues("location");*/
 		
