@@ -6,6 +6,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Create a new book</title>
 </head>
+
+
+
 <body>
 Please input the information of the book you want to add:
 <hr>

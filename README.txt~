@@ -1,0 +1,1 @@
+This project is to build a login service and CRUD operations on books. Hibernate is used to connect the project and database. JSP and Servlet are used to create the web pages and achieve CRUD operations.
