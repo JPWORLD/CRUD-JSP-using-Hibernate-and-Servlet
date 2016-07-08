@@ -36,12 +36,12 @@ Hello <jsp:getProperty property="userName" name="user"/>
 
  --%>
  
- 
- <div class="container">
+ <form action="Behave" method="post">
+ <div class="container" >
 	
 	<h2>Hello <%=user.getUserName() %>! Please choose the operation you want to do:</h2>
 	
-  <ul>
+  <ul action="Behave" method="post">
   <li>
     <input type="radio" id="A-option" name="choice" value = "Add">
     <label for="A-option">Add</label>
@@ -68,26 +68,34 @@ Hello <jsp:getProperty property="userName" name="user"/>
     <label for="D-option">Delete</label>
     
     <div class="check"><div class="inside"></div></div>
+    
   </li>
-  
-  <li>
-    <input type="submit" id="S-option" name="submit" value = "Submit">
+  </ul>
 
+    <input type="submit" id="S-option" name="submit" value = "Submit">
     
     <div class="check"><div class="inside"></div></div>
-  </li>
-</ul>
 </div>
+</form>
+<%-- 
 
+<div class="container">
+	<h2>Hello <%=user.getUserName() %>! Please choose the operation you want to do:</h2>
+	
+	<form action="Behave" method="post">
+		<input type="radio" id="choiceA" name="choice" value = "Add"/>
+		<label for="choiceA">Add</label> 
+		<input type="radio" id="choiceB" name="choice" value= "Retrieve"/>
+		<label for="choiceB">Retrieve</label> 
+		<input type="radio" id="choiceC" name="choice" value = "Edit"/>
+		<label for="choiceC">Edit</label> 
+		<input type="radio" id="choiceD" name="choice" value = "Delete"/>
+		<label for="choiceD">Delete</label> 
+		<input type="submit" name = "submit" value = "Submit" />
+	</form>
+	
+</div> --%>
 
-<!-- <hr>
-<form action="Behave" method="post">
-	<input type="radio" name="choice" value = "Add"/>Add 
-	<input type="radio" name="choice" value= "Retrieve"/>Retrieve
-	<input type="radio" name="choice" value = "Edit"/>Edit
-	<input type="radio" name="choice" value = "Delete"/>Delete
-	<input type="submit" name = "submit" value = "Submit" />
-</form> -->
 
 </body>
 </html>
