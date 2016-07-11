@@ -5,6 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="CSS/DeleteBook.css">
 </head>
 <body>
 Please input the name of the book you want to delete:

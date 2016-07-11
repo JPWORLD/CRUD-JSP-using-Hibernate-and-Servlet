@@ -6,13 +6,10 @@ import Entity.User;
 
 public class LoginService {
 	HashMap<String, String> users = new HashMap<String, String>();
-	
 	public LoginService(){
 		users.put("qi", "hu");
 		users.put("zhang", "bihua");
-		users.put("xin", "zhong");
 	}
-	
 	
 	public boolean authenticate(String userId, String password){
 		System.out.println(password);
@@ -22,17 +19,12 @@ public class LoginService {
 		}else{
 			return false;
 		}
-		
-		
 	}
 
 	public User getUserDetails(String userId){
-		
 		User user = new User();
 		user.setUserName(users.get(userId));
 		user.setUserId(userId);
-		
 		return user;
-		
 	}
 }

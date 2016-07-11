@@ -28,7 +28,7 @@ public class deleteBook extends HttpServlet {
 		Operation operation = new Operation();
 		operation.delete(book_name);
 		
-		System.out.println("The book is successfully deleted!");
+		//System.out.println("The book is successfully deleted!");
 		
 		
 		
